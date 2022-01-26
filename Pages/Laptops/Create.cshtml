@@ -1,0 +1,64 @@
+﻿@page
+@model Proiect.Pages.Laptops.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Laptop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Laptop.Processor" class="control-label"></label>
+                <input asp-for="Laptop.Processor" class="form-control" />
+                <span asp-validation-for="Laptop.Processor" class="text-danger"></span>
+            </div>
+            <label asp-for="Laptop.CategoryID" class="control-label">Category Name</label>
+            <select asp-for="Laptop.CategoryID" class="form-control" asp-items="ViewBag.CategoryID">
+            </select>
+            <span asp-validation-for="Laptop.CategoryID" class="text-danger"></span>
+
+            <label asp-for="Laptop.BrandID" class="control-label">Brand Name</label>
+            <select asp-for="Laptop.BrandID" class="form-control" asp-items="ViewBag.BrandID">
+            </select>
+            <span asp-validation-for="Laptop.BrandID" class="text-danger"></span>
+
+            <div class="form-group">
+                <label asp-for="Laptop.DiskSpace" class="control-label"></label>
+                <input asp-for="Laptop.DiskSpace" class="form-control" />
+                <span asp-validation-for="Laptop.DiskSpace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Laptop.GraphicsCard" class="control-label"></label>
+                <input asp-for="Laptop.GraphicsCard" class="form-control" />
+                <span asp-validation-for="Laptop.GraphicsCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Laptop.Name" class="control-label"></label>
+                <input asp-for="Laptop.Name" class="form-control" />
+                <span asp-validation-for="Laptop.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Laptop.Price" class="control-label"></label>
+                <input asp-for="Laptop.Price" class="form-control" />
+                <span asp-validation-for="Laptop.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
